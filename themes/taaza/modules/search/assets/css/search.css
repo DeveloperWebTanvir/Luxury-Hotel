@@ -1,0 +1,100 @@
+/* ------------------------------------- */
+
+/* Search Result - Style */
+
+/* ------------------------------------- */
+
+#searchform ul.quick_search_results {
+    position: absolute;
+    padding: 0;
+    background-color: var(--wdtBodyBGColor);
+    text-align: left;
+    width: 100%;
+    max-width: 340px;
+    margin-right: auto;
+    margin: 16px 0 0;
+    transition: all .4s ease;
+    z-index: 99;
+    font-size: 0.9rem;
+    transform: translateY(10px);
+}
+
+#searchform ul.quick_search_results p:only-child {
+    margin: 0;
+    padding: 10px 20px;
+}
+
+#searchform ul.quick_search_results p,
+#searchform ul.quick_search_results li:only-child {
+    border: none;
+}
+
+#searchform ul.quick_search_results li.quick_search_data_item {
+    list-style-type: none;
+    text-align: inherit;
+    line-height: var(--wdtLineHeight_Base);
+    padding: 6px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+    margin: 0;
+}
+
+#searchform ul.quick_search_results li.quick_search_data_item a {
+    width: 100%;
+    font-size: 0.9rem;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 60px 1fr;
+    place-items: center;
+    line-height: normal;
+    font-weight: var(--wdtFontWeight_Ext);
+}
+
+#searchform ul.quick_search_results li.quick_search_data_item a>img {
+    -webkit-border-radius: var(--wdtRadius_Zero);
+    border-radius: var(--wdtRadius_Zero);
+}
+
+#searchform ul.quick_search_results:not(.active):before,
+#searchform ul.quick_search_results:not(.active) {
+    font-size: inherit;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all .4s ease;
+}
+
+#searchform ul.quick_search_results.active {
+    opacity: 1;
+    transform: translateY(0);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -webkit-box-shadow: 0 -1px 8px 3px rgba(var(--wdtHeadAltColorRgb), 0.08);
+    box-shadow: 0 -1px 8px 3px rgba(var(--wdtHeadAltColorRgb), 0.08);
+}
+
+#searchform input.text_input~ul.quick_search_results {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all .4s ease;
+    visibility: hidden;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+#searchform input.text_input:focus~ul.quick_search_results {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+#searchform ul.quick_search_results.active:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: inherit;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -7px;
+    left: 20px;
+}

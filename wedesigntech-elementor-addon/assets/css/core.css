@@ -1,0 +1,36 @@
+:root {
+    --wdt-elementor-color-black: #000;
+    --wdt-elementor-color-white: #fff;
+    --wdt-elementor-base-transition: all 0.3s linear 0s;
+    --wdt-Ad-Transition: 375ms cubic-bezier(0.7, 0, 0.3, 1);
+    /* Muh */
+}
+
+.wdt-sticky-column.wdt-sticky-css {
+    position: sticky;
+    top: 30px;
+    height: fit-content;
+}
+
+/* Common Styles */
+
+svg {
+    height: 1em;
+    width: 1em;
+}
+
+/**
+    * Change the fill color to match the text color in all browsers (opinionated).
+    */
+
+svg:not([fill]) {
+    fill: currentColor;
+}
+
+/**
+    * Hide the overflow in IE.
+    */
+
+svg:not(:root) {
+    overflow: hidden;
+}
